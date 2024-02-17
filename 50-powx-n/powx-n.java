@@ -1,16 +1,21 @@
 class Solution {
     public double myPow(double x, int n) {
-      if (n == 0) {
+      double res = pow(x,abs(n));
+      return (n>0)?res:1/res;   
+    }
+    private int abs(int n)
+    {
+        return (n>0)?n:-1*n;
+    }
+    private double pow(double x,int n)
+    {
+        if(n==0)
             return 1;
-        } 
-        else if (n < 0) {
-            return 1 / (x * myPow(x, -n - 1));
-        }
-        else if (n%2==0){
-            double a = myPow(x,n/2);
-            return a*a;
-        }
-        return x*myPow(x,n-1);       
+        double temp= pow(x,n/2);
+        if(n%2==0)
+            return temp*temp;
+        else
+            return temp*temp*x;
     }
     
 }
