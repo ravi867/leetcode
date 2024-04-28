@@ -4,25 +4,21 @@ class Solution {
         {
             for(int j=0;j<2;j++)
             {
-                char p=grid[i][j];
-                char q= grid[i+1][j];
-                char r= grid[i][j+1];
-                char s= grid[i+1][j+1];
                 int charBlack=0;
                 int charWhite=0;
-                if(p=='B')
+                if(grid[i][j]=='B')
                     charBlack++;
                 else
                     charWhite++;
-                if(q=='B')
+                if(grid[i+1][j]=='B')
                     charBlack++;
                 else
                     charWhite++;
-                if(r=='B')
+                if(grid[i][j+1]=='B')
                     charBlack++;
                 else
                     charWhite++;
-                if(s=='B')
+                if(grid[i+1][j+1]=='B')
                     charBlack++;
                 else
                     charWhite++;
